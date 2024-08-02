@@ -1,69 +1,69 @@
 from textwrap import dedent
 from crewai import Task
 
-class MeetingPreparationTasks():
-	def research_task(self, agent, participants, context):
-		return Task(
-			description=dedent(f"""\
-				Conduct comprehensive research on each of the individuals and companies
-				involved in the upcoming meeting. Gather information on recent
-				news, achievements, professional background, and any relevant
-				business activities.
+class MeetingPreparationTasks:
+    def research_task(self, agent, participants, context):
+        return Task(
+            description=dedent(f"""
+                Realizar uma pesquisa completa sobre o tópico da reunião, incluindo
+                antecedentes dos participantes, pontos de dados relevantes e desenvolvimentos recentes.
 
-				Participants: {participants}
-				Meeting Context: {context}"""),
-			expected_output=dedent("""\
-				A detailed report summarizing key findings about each participant
-				and company, highlighting information that could be relevant for the meeting."""),
-			async_execution=True,
-			agent=agent
-		)
+                Participantes: {participants}
+                Contexto da Reunião: {context}
+            """),
+            expected_output=dedent("""
+                Um relatório detalhado de pesquisa cobrindo todos os aspectos relevantes do tópico da reunião.
+            """),
+            async_execution=True,
+            agent=agent
+        )
 
-	def industry_analysis_task(self, agent, participants, context):
-		return Task(
-			description=dedent(f"""\
-				Analyze the current industry trends, challenges, and opportunities
-				relevant to the meeting's context. Consider market reports, recent
-				developments, and expert opinions to provide a comprehensive
-				overview of the industry landscape.
+    def industry_analysis_task(self, agent, participants, context):
+        return Task(
+            description=dedent(f"""
+                Analisar as tendências atuais do setor, desafios e oportunidades
+                relevantes para o contexto da reunião. Considere relatórios de mercado, desenvolvimentos recentes
+                e opiniões de especialistas para fornecer uma visão abrangente do cenário do setor.
 
-				Participants: {participants}
-				Meeting Context: {context}"""),
-			expected_output=dedent("""\
-				An insightful analysis that identifies major trends, potential
-				challenges, and strategic opportunities."""),
-			async_execution=True,
-			agent=agent
-		)
+                Participantes: {participants}
+                Contexto da Reunião: {context}
+            """),
+            expected_output=dedent("""
+                Uma análise perspicaz que identifica principais tendências, potenciais desafios e oportunidades estratégicas.
+            """),
+            async_execution=True,
+            agent=agent
+        )
 
-	def meeting_strategy_task(self, agent, context, objective):
-		return Task(
-			description=dedent(f"""\
-				Develop strategic talking points, questions, and discussion angles
-				for the meeting based on the research and industry analysis conducted
+    def meeting_strategy_task(self, agent, context, objective):
+        return Task(
+            description=dedent(f"""
+                Desenvolver pontos de discussão estratégicos, perguntas e ângulos de discussão
+                para a reunião com base na pesquisa e análise do setor conduzidas.
 
-				Meeting Context: {context}
-				Meeting Objective: {objective}"""),
-			expected_output=dedent("""\
-				Complete report with a list of key talking points, strategic questions
-				to ask to help achieve the meetings objective during the meeting."""),
-			agent=agent
-		)
+                Contexto da Reunião: {context}
+                Objetivo da Reunião: {objective}
+            """),
+            expected_output=dedent("""
+                Relatório completo com uma lista de pontos de discussão chave, perguntas estratégicas
+                a serem feitas para ajudar a alcançar o objetivo da reunião.
+            """),
+            agent=agent
+        )
 
-	def summary_and_briefing_task(self, agent, context, objective):
-		return Task(
-			description=dedent(f"""\
-				Compile all the research findings, industry analysis, and strategic
-				talking points into a concise, comprehensive briefing document for
-				the meeting.
-				Ensure the briefing is easy to digest and equips the meeting
-				participants with all necessary information and strategies.
+    def summary_and_briefing_task(self, agent, context, objective):
+        return Task(
+            description=dedent(f"""
+                Compilar todas as descobertas da pesquisa, análise do setor e pontos de discussão estratégicos
+                em um documento informativo e conciso para a reunião. Assegurar que o resumo seja fácil de entender e
+                forneça aos participantes da reunião todas as informações e estratégias necessárias.
 
-				Meeting Context: {context}
-				Meeting Objective: {objective}"""),
-			expected_output=dedent("""\
-				A well-structured briefing document that includes sections for
-				participant bios, industry overview, talking points, and
-				strategic recommendations."""),
-			agent=agent
-		)
+                Contexto da Reunião: {context}
+                Objetivo da Reunião: {objective}
+            """),
+            expected_output=dedent("""
+                Um documento de resumo bem estruturado que inclui seções para biografias dos participantes, visão geral do setor,
+                pontos de discussão e recomendações estratégicas.
+            """),
+            agent=agent
+        )
