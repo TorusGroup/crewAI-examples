@@ -31,8 +31,8 @@ class Copy(BaseModel):
 @CrewBase
 class MarketingPostsCrew():
     """Equipe MarketingPosts"""
-    agents_config = 'config/agentes.yaml'
-    tasks_config = 'config/tarefas.yaml'
+    agents_config = 'config/agents.yaml'
+    tasks_config = 'config/tasks.yaml'
 
     @agent
     def lead_market_analyst(self) -> Agent:
