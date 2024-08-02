@@ -8,110 +8,110 @@ from langchain.agents import load_tools
 from langchain.llms import Ollama
 
 class MarketingAnalysisAgents:
-	def __init__(self):
-		self.llm = Ollama(model=os.environ['MODEL'])
+    def __init__(self):
+        self.llm = Ollama(model=os.environ['MODEL'])
 
-	def product_competitor_agent(self):
-		return Agent(
-			role="Lead Market Analyst",
-			goal=dedent("""\
-				Conduct amazing analysis of the products and
-				competitors, providing in-depth insights to guide
-				marketing strategies."""),
-			backstory=dedent("""\
-				As the Lead Market Analyst at a premier
-				digital marketing firm, you specialize in dissecting
-				online business landscapes."""),
-			tools=[
-					BrowserTools.scrape_and_summarize_website,
-					SearchTools.search_internet
-			],
-			allow_delegation=False,
-			llm=self.llm,
-			verbose=True
-		)
+    def product_competitor_agent(self):
+        return Agent(
+            role="Analista Líder de Mercado",
+            goal=dedent("""\
+                Realizar uma análise incrível dos produtos e
+                concorrentes, fornecendo insights profundos para guiar
+                estratégias de marketing."""),
+            backstory=dedent("""\
+                Como Analista Líder de Mercado em uma empresa
+                de marketing digital de primeira linha, você se especializa em dissecar
+                paisagens de negócios online."""),
+            tools=[
+                BrowserTools.scrape_and_summarize_website,
+                SearchTools.search_internet
+            ],
+            allow_delegation=False,
+            llm=self.llm,
+            verbose=True
+        )
 
-	def strategy_planner_agent(self):
-		return Agent(
-			role="Chief Marketing Strategist",
-			goal=dedent("""\
-				Synthesize amazing insights from product analysis
-				to formulate incredible marketing strategies."""),
-			backstory=dedent("""\
-				You are the Chief Marketing Strategist at
-				a leading digital marketing agency, known for crafting
-				bespoke strategies that drive success."""),
-			tools=[
-					BrowserTools.scrape_and_summarize_website,
-					SearchTools.search_internet,
-					SearchTools.search_instagram
-			],
-			llm=self.llm,
-			verbose=True
-		)
+    def strategy_planner_agent(self):
+        return Agent(
+            role="Estrategista Chefe de Marketing",
+            goal=dedent("""\
+                Sintetizar insights incríveis da análise de produtos
+                para formular estratégias de marketing incríveis."""),
+            backstory=dedent("""\
+                Você é o Estrategista Chefe de Marketing em
+                uma agência de marketing digital líder, conhecido por criar
+                estratégias sob medida que impulsionam o sucesso."""),
+            tools=[
+                BrowserTools.scrape_and_summarize_website,
+                SearchTools.search_internet,
+                SearchTools.search_instagram
+            ],
+            llm=self.llm,
+            verbose=True
+        )
 
-	def creative_content_creator_agent(self):
-		return Agent(
-			role="Creative Content Creator",
-			goal=dedent("""\
-				Develop compelling and innovative content
-				for social media campaigns, with a focus on creating
-				high-impact Instagram ad copies."""),
-			backstory=dedent("""\
-				As a Creative Content Creator at a top-tier
-				digital marketing agency, you excel in crafting narratives
-				that resonate with audiences on social media.
-				Your expertise lies in turning marketing strategies
-				into engaging stories and visual content that capture
-				attention and inspire action."""),
-			tools=[
-					BrowserTools.scrape_and_summarize_website,
-					SearchTools.search_internet,
-					SearchTools.search_instagram
-			],
-			llm=self.llm,
-			verbose=True
-		)
+    def creative_content_creator_agent(self):
+        return Agent(
+            role="Criador de Conteúdo Criativo",
+            goal=dedent("""\
+                Desenvolver conteúdo atraente e inovador
+                para campanhas de mídia social, com foco na criação
+                de textos publicitários de alto impacto para Instagram."""),
+            backstory=dedent("""\
+                Como Criador de Conteúdo Criativo em uma agência
+                de marketing digital de primeira linha, você se destaca em criar narrativas
+                que ressoam com o público nas redes sociais.
+                Sua expertise está em transformar estratégias de marketing
+                em histórias envolventes e conteúdo visual que capturam
+                atenção e inspiram ação."""),
+            tools=[
+                BrowserTools.scrape_and_summarize_website,
+                SearchTools.search_internet,
+                SearchTools.search_instagram
+            ],
+            llm=self.llm,
+            verbose=True
+        )
 
-	def senior_photographer_agent(self):
-		return Agent(
-				role="Senior Photographer",
-				goal=dedent("""\
-					Take the most amazing photographs for instagram ads that
-					capture emotions and convey a compelling message."""),
-				backstory=dedent("""\
-					As a Senior Photographer at a leading digital marketing
-					agency, you are an expert at taking amazing photographs that
-					inspire and engage, you're now working on a new campaign for a super
-					important customer and you need to take the most amazing photograph."""),
-				tools=[
-					BrowserTools.scrape_and_summarize_website,
-					SearchTools.search_internet,
-					SearchTools.search_instagram
-				],
-				llm=self.llm,
-				allow_delegation=False,
-				verbose=True
-		)
+    def senior_photographer_agent(self):
+        return Agent(
+            role="Fotógrafo Sênior",
+            goal=dedent("""\
+                Tirar as fotografias mais incríveis para anúncios no Instagram que
+                capturem emoções e transmitam uma mensagem convincente."""),
+            backstory=dedent("""\
+                Como Fotógrafo Sênior em uma agência de marketing
+                digital de primeira linha, você é especialista em tirar fotografias incríveis que
+                inspiram e envolvem. Você está trabalhando em uma nova campanha para um cliente super
+                importante e precisa tirar a fotografia mais incrível."""),
+            tools=[
+                BrowserTools.scrape_and_summarize_website,
+                SearchTools.search_internet,
+                SearchTools.search_instagram
+            ],
+            llm=self.llm,
+            allow_delegation=False,
+            verbose=True
+        )
 
-	def chief_creative_diretor_agent(self):
-		return Agent(
-				role="Chief Creative Director",
-				goal=dedent("""\
-					Oversee the work done by your team to make sure it's the best
-					possible and aligned with the product's goals, review, approve,
-					ask clarifying question or delegate follow up work if necessary to make
-					decisions"""),
-				backstory=dedent("""\
-					You're the Chief Content Officer of leading digital
-					marketing specialized in product branding. You're working on a new
-					customer, trying to make sure your team is crafting the best possible
-					content for the customer."""),
-				tools=[
-					BrowserTools.scrape_and_summarize_website,
-					SearchTools.search_internet,
-					SearchTools.search_instagram
-				],
-				llm=self.llm,
-				verbose=True
-		)
+    def chief_creative_director_agent(self):
+        return Agent(
+            role="Diretor Criativo Chefe",
+            goal=dedent("""\
+                Supervisionar o trabalho realizado pela sua equipe para garantir que seja o melhor
+                possível e alinhado com os objetivos do produto. Revisar, aprovar,
+                fazer perguntas de esclarecimento ou delegar trabalho de acompanhamento se necessário para tomar
+                decisões."""),
+            backstory=dedent("""\
+                Você é o Diretor de Conteúdo de uma empresa líder
+                em marketing digital especializada em branding de produtos. Você está trabalhando para um novo
+                cliente, tentando garantir que sua equipe esteja criando o melhor conteúdo possível
+                para o cliente."""),
+            tools=[
+                BrowserTools.scrape_and_summarize_website,
+                SearchTools.search_internet,
+                SearchTools.search_instagram
+            ],
+            llm=self.llm,
+            verbose=True
+        )
