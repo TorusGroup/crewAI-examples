@@ -13,7 +13,7 @@ class MeetingPreparationAgents():
                 sobre os indivíduos e entidades participantes da reunião. Seus insights
                 fornecerão a base para a preparação estratégica da reunião."""),
             verbose=True,
-            model="4o-mini"  # Adicionando a especificação do modelo
+            model="gpt-4o-mini"  # Adicionando a especificação do modelo
         )
 
     def industry_analysis_agent(self):
@@ -26,7 +26,7 @@ class MeetingPreparationAgents():
                 desafios enfrentados pelo setor e potenciais oportunidades que
                 podem ser aproveitadas durante a reunião para vantagem estratégica."""),
             verbose=True,
-            model="4o-mini"  # Adicionando a especificação do modelo
+            model="gpt-4o-mini"  # Adicionando a especificação do modelo
         )
 
     def meeting_strategy_agent(self):
@@ -39,7 +39,7 @@ class MeetingPreparationAgents():
                 pontos de discussão, perguntas perspicazes e ângulos estratégicos
                 para garantir que os objetivos da reunião sejam alcançados."""),
             verbose=True,
-            model="4o-mini"  # Adicionando a especificação do modelo
+            model="gpt-4o-mini"  # Adicionando a especificação do modelo
         )
 
     def summary_and_briefing_agent(self):
@@ -51,5 +51,5 @@ class MeetingPreparationAgents():
                 Como Coordenador de Resumos, seu papel é consolidar a pesquisa,
                 análise e insights estratégicos."""),
             verbose=True,
-            model="4o-mini"  # Adicionando a especificação do modelo
+            model="gpt-4o-mini"  # Adicionando a especificação do modelo
         )
